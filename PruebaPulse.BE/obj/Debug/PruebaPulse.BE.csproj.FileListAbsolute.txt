@@ -1,0 +1,6 @@
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.BE\bin\Debug\PruebaPulse.BE.dll
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.BE\bin\Debug\PruebaPulse.BE.pdb
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.BE\obj\Debug\PruebaPulse.BE.csprojAssemblyReference.cache
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.BE\obj\Debug\PruebaPulse.BE.csproj.CoreCompileInputs.cache
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.BE\obj\Debug\PruebaPulse.BE.dll
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.BE\obj\Debug\PruebaPulse.BE.pdb

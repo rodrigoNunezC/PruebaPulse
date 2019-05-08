@@ -1,0 +1,12 @@
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\PruebaPulse.DAL.dll.config
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\PruebaPulse.DAL.dll
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\PruebaPulse.DAL.pdb
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\obj\Debug\PruebaPulse.DAL.csprojAssemblyReference.cache
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\obj\Debug\PruebaPulse.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\obj\Debug\PruebaPulse.DAL.csproj.CopyComplete
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\obj\Debug\PruebaPulse.DAL.dll
+C:\Users\Rorro\Desktop\PruebaPulse\PruebaPulse.DAL\obj\Debug\PruebaPulse.DAL.pdb

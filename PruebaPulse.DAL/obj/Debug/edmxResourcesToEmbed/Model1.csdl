@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PruebaPulseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Estado_Invitado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Invitado" Relationship="Self.FK_Invitado_Estado_Invitado1" FromRole="Estado_Invitado" ToRole="Invitado" />
+  </EntityType>
+  <EntityType Name="Evento">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Titulo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="FechaInicio" Type="DateTime" Precision="0" />
+    <Property Name="CreadoPor" Type="Guid" />
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Usuario" Relationship="Self.FK_Evento_Usuario" FromRole="Evento" ToRole="Usuario" />
+    <NavigationProperty Name="Invitado" Relationship="Self.FK_Invitado_Evento" FromRole="Evento" ToRole="Invitado" />
+  </EntityType>
+  <EntityType Name="Invitado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EventoId" Type="Guid" />
+    <Property Name="EstadoId" Type="Int32" />
+    <NavigationProperty Name="Estado_Invitado" Relationship="Self.FK_Invitado_Estado_Invitado1" FromRole="Invitado" ToRole="Estado_Invitado" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_Invitado_Evento" FromRole="Invitado" ToRole="Evento" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ApellidoPaterno" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Evento" Relationship="Self.FK_Evento_Usuario" FromRole="Usuario" ToRole="Evento" />
+  </EntityType>
+  <Association Name="FK_Invitado_Estado_Invitado1">
+    <End Role="Estado_Invitado" Type="Self.Estado_Invitado" Multiplicity="0..1" />
+    <End Role="Invitado" Type="Self.Invitado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado_Invitado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invitado">
+        <PropertyRef Name="EstadoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Evento_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Evento" Type="Self.Evento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Evento">
+        <PropertyRef Name="CreadoPor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invitado_Evento">
+    <End Role="Evento" Type="Self.Evento" Multiplicity="0..1" />
+    <End Role="Invitado" Type="Self.Invitado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Evento">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invitado">
+        <PropertyRef Name="EventoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PruebaPulseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Estado_Invitado" EntityType="Self.Estado_Invitado" />
+    <EntitySet Name="Evento" EntityType="Self.Evento" />
+    <EntitySet Name="Invitado" EntityType="Self.Invitado" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <AssociationSet Name="FK_Invitado_Estado_Invitado1" Association="Self.FK_Invitado_Estado_Invitado1">
+      <End Role="Estado_Invitado" EntitySet="Estado_Invitado" />
+      <End Role="Invitado" EntitySet="Invitado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Evento_Usuario" Association="Self.FK_Evento_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Evento" EntitySet="Evento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invitado_Evento" Association="Self.FK_Invitado_Evento">
+      <End Role="Evento" EntitySet="Evento" />
+      <End Role="Invitado" EntitySet="Invitado" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

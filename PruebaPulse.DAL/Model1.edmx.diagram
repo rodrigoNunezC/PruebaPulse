@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fdaf9c714691410faff7595e3bc65c4b" Name="Diagram1">
+        <EntityTypeShape EntityType="PruebaPulseModel.Estado_Invitado" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaPulseModel.Evento" Width="1.5" PointX="3.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaPulseModel.Invitado" Width="1.5" PointX="6.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaPulseModel.sysdiagrams" Width="1.5" PointX="0.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PruebaPulseModel.Usuario" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="PruebaPulseModel.FK_Invitado_Estado_Invitado1" ManuallyRouted="false" />
+        <AssociationConnector Association="PruebaPulseModel.FK_Evento_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="PruebaPulseModel.FK_Invitado_Evento" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
